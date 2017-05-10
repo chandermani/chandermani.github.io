@@ -1,14 +1,14 @@
 
 # SEO settings
 title: Today I Learned - Codinfox
-stylished_title: TodayI<span>Learned</span>
+stylished_title: Chandermani<span>Arora</span>
 description: "Snippets on what I learned today."
-keywords: "TIL, web, coding, machine learning, computer vision, neuroscience, math"
-url: http://codinfox.github.io
+keywords: "web, coding, cloud computing, azure, angular, angularjs, design, architecture, blog"
+url: http://chandermani.github.io
 baseurl: ""
 
-google_analytics: UA-50842645-1
-disqus_shortname: "codinfox"
+google_analytics: UA-98899057-1
+disqus_shortname: ""
 
 # Build settings
 permalink   : /:year/:title/
@@ -29,14 +29,14 @@ sass:
 
 # Author settings
 author:
-  name     : Codinfox
+  name     : Chandermani
   thumb    : https://en.gravatar.com/userimage/42626876/ff31b74f207c61cc9d2d1d9196fd0080.jpg?size=120
-  email    : li.zhihao@outlook.com
-  url      : http://codinfox.github.io
-  github   : http://github.com/codinfox
-#  twitter  : http://twitter.com/nandomoreirame
+  email    : cmyworld@gmail.com
+  url      : http://chandermani.github.io
+  github   : http://github.com/chandermani
+  twitter  : http://twitter.com/cmyworld
 #  facebook : http://facebook.com/fernando.dev
-  linkedin : http://linkedin.com/in/lizhihao
+  linkedin : http://linkedin.com/in/chandermani
 
 # social settings
 # og_locale: "pt_BR"
@@ -46,10 +46,9 @@ author:
 project:
     repo: https://github.com/codinfox/TIL
     name: TIL
-    author: codinfox
+    author: Chandermani
 
 gems:
-  #- bourbon
   - jekyll-paginate
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
