@@ -1,6 +1,6 @@
 
 # SEO settings
-title: Today I Learned - Codinfox
+title: Random Thoughts - Chandermani
 stylished_title: Random <span>Thoughts</span>
 description: "Technology ramblings and my day to day learnings."
 keywords: "web, coding, cloud computing, azure, angular, angularjs, design, architecture, blog"
@@ -39,9 +39,9 @@ author:
   linkedin : http://linkedin.com/in/chandermani
 
 # social settings
-# og_locale: "pt_BR"
-# twitter_card: "summary_large_image"
-# twitter_site: "@nandomoreirame"
+# og_locale: "en_GB"
+twitter_card: "summary_large_image"
+twitter_site: "@cmyworld"
 
 project:
     repo: https://github.com/chandermani/TIL
