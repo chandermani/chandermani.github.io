@@ -1,14 +1,14 @@
 
 # SEO settings
 title: Today I Learned - Codinfox
-stylished_title: Chandermani<span>Arora</span>
-description: "Snippets on what I learned today."
+stylished_title: Random <span>Thoughts</span>
+description: "Technology ramblings and my day to day learnings."
 keywords: "web, coding, cloud computing, azure, angular, angularjs, design, architecture, blog"
 url: http://chandermani.github.io
 baseurl: ""
 
 google_analytics: UA-98899057-1
-disqus_shortname: ""
+disqus_shortname: "chandermani"
 
 # Build settings
 permalink   : /:year/:title/
@@ -44,7 +44,7 @@ author:
 # twitter_site: "@nandomoreirame"
 
 project:
-    repo: https://github.com/codinfox/TIL
+    repo: https://github.com/chandermani/TIL
     name: TIL
     author: Chandermani
 
