@@ -1,0 +1,18 @@
+---
+layout: post
+title: Adobe Acrobat Activex Control issues with 64bit machines. Error  "Class not
+  registered HRESULT 0x80040154..."
+date: '2010-03-12T16:28:00.004+05:30'
+author: Chandermani Arora
+tags:
+- ".Net"
+- Acrobat
+- Error
+- x64
+- ActiveX
+modified_time: '2010-03-12T16:40:56.401+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-8123702584717668766
+blogger_orig_url: http://chandermani.blogspot.com/2010/03/adobe-acrobat-activex-control-issues.html
+---
+
+I justed moved from a 32 bit laptop to a 64 bit laptop. The project we are working on uses Acrobat Reader activex control to show PDF documents. When I ran the project on my system from VS 2008 the application threw exception while trying to load the PDF viewer control. The error returned was<br /><strong><em>"Class not registered HRESULT 0x80040154..."</em></strong><br />The issue turned out to be that the solution was compiled for "Any CPU"\x64 bit architecture. Once i changed the build configuration to x86 and recompiled the error was resolved. It intially seemed like the component was not installed correctly and i tried to reinstall Acrobat Reader multiple times before hitting the correct solution.<br /><br /><br />Happy Coding<br />Chandermani

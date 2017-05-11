@@ -1,0 +1,14 @@
+---
+layout: post
+title: IIS Url Rewrite and HTTP POST data
+date: '2013-05-03T12:32:00.000+05:30'
+author: Chandermani Arora
+tags:
+- url rewrite
+- IIS
+modified_time: '2015-01-18T19:08:09.718+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-5603349288592371397
+blogger_orig_url: http://chandermani.blogspot.com/2013/05/iis-url-rewrite-and-http-post-data.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">If you play around with IIS Url Rewriting rules and try to do redirects on an HTTP POST you loose your POST data.<br /><br />To make sure you get the post data you have to set the `redirectType` to `Temporary` within your rules. So the action configuration looks like this<br /><br /><blockquote class="tr_bq">&lt;action redirectType="<b>Temporary</b>" type="Redirect" url="http://{HTTP_HOST}{REQUEST_URI}"&gt; &lt;/action&gt;</blockquote><br />You may think what scenario warrant a POST request redirect. We faced one such scenario while doing SSO with a federated Identity Provider (IP)&nbsp; such as Google, Azure AD. In federated authentication scenario once the user is authenticated by the IP, it redirects back to your site with claim tokens in a POST request over secure channel (https). In our case we wanted to redirect to user back http after receiving the request. But any redirects were causing loss of token. By doing a 307 (Temporary) redirect we were able to preserve the post data.</div>

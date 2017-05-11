@@ -1,0 +1,15 @@
+---
+layout: post
+title: Namespace aliasing and extension methods
+date: '2011-03-11T17:56:00.003+05:30'
+author: Chandermani Arora
+tags:
+- Namespace
+- c#
+- alias
+modified_time: '2011-03-11T17:59:30.310+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-735860756814321347
+blogger_orig_url: http://chandermani.blogspot.com/2011/03/namespace-aliasing-and-extension.html
+---
+
+One of the interesting thing that i learned today is, namespace aliasing can break extension methods declared in the name space.<div>To safeguard against this situation add the same namespace again without alias. For example</div><div><br /></div><div>using alias=X.Y.Z;</div><div><br /></div><div>should be changed to</div><div><br /></div><div>using alias=X.Y.Z;</div><div>using X.Y.Z</div><div><br /></div><div>and everything works,</div><div><br /></div><div>Happy Coding,</div><div>Chandermani</div>

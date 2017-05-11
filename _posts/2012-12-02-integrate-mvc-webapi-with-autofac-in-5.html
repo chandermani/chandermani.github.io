@@ -1,0 +1,17 @@
+---
+layout: post
+title: Integrate ASP.Net MVC + WebAPI with Autofac in 5 mins
+date: '2012-12-02T13:40:00.000+05:30'
+author: Chandermani Arora
+tags:
+- autofac
+- MVC
+- webapi
+- Nuget
+- ASP.Net
+modified_time: '2012-12-02T13:42:13.445+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-7253287725154532791
+blogger_orig_url: http://chandermani.blogspot.com/2012/12/integrate-mvc-webapi-with-autofac-in-5.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Recently i configured <a href="https://code.google.com/p/autofac/" target="_blank">Autofac </a>with <a href="http://www.asp.net/mvc" target="_blank">ASP.Net MVC 4</a> and <a href="http://asp.net/webapi" target="_blank">WebAPI</a>. Here are the steps required to configure Autofac<br /><ol style="text-align: left;"><li>Install package Autofac.MVC4</li><li>Install package Autofac.WebApi</li><li>Add a class AutofacBootstrap. Use this class to configure the dependencies within your project. <script src="https://gist.github.com/4187637.js"> </script></li><li>Open Global.asax file and add a method like <script src="https://gist.github.com/4187627.js"> </script> </li><li>&nbsp;Call the method from Application_Start</li><li>And you are done !! </li></ol></div>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: Curious case of PDF file not being included as part of deployment
+date: '2010-12-13T13:52:00.005+05:30'
+author: Chandermani Arora
+tags:
+- Build Action
+- ASP.Net
+- Build
+- PDF
+modified_time: '2010-12-13T13:59:44.756+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-8485325006010830715
+blogger_orig_url: http://chandermani.blogspot.com/2010/12/curious-case-of-pdf-file-not-being.html
+---
+
+I included a PDF file as a part of web project and hyperlinked it in a page. This web application was part of Azure deployment. When I tried to test this in the dev fabric to my surprise i was greeted with 404 error :(<br />I turned out while VS does some magic for web content files (html, asp, jpg etc), but for PDF file it does not set the Build Action property of the file and hence this error. Changing the Build Action to 'Content' solved everything.<br /><br />Happy Coding,<br />Chandermani

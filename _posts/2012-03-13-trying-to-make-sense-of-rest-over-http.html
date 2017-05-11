@@ -1,0 +1,19 @@
+---
+layout: post
+title: Trying to make sense of REST (over HTTP)
+date: '2012-03-13T18:27:00.001+05:30'
+author: Chandermani Arora
+tags:
+- GET
+- POST
+- REST
+- Architecture
+- HTTP
+- WCF
+- Web Services
+modified_time: '2012-03-13T20:08:01.549+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-689244679226735046
+blogger_orig_url: http://chandermani.blogspot.com/2012/03/trying-to-make-sense-of-rest-over-http.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><div>People who come from WCF/ Web Services background and&nbsp; transition to RESTish type communication infrastructure make mistakes that follow a common pattern. I have seen it with people who are new to REST and with people who have spent some time working with RESTful services. (Throughout the post where every I mention REST I mean REST over HTTP)&nbsp; The common misconceptions&nbsp; are<br /><ul style="text-align: left;"><li>Not understanding the difference between HTTP POST and GET, in fact having too little or no clue about HTTP Verbs. For most devs interaction with server involves calling a client proxy method, handling the request on server, sending a response back from server, handling the response on client. This abstraction means no one knows what happens at infrastructure level. When programming for HTTP one cannot ignore the abstraction, else we cannot take full advantage of the medium. </li></ul></div><div style="text-align: left;"><br /></div><div><ul style="text-align: left;"><li>The manifestation of the above affect is, either every call becomes a POST or every call becomes a GET. </li></ul></div><ul style="text-align: left;"><ul><li>When every call becomes GET. All CRUD are done through url. I have seen people trying to do crazy stuff with urls just to pass data from client to server.</li><li>When every call becomes POST (easy to do as compared to GET) , we fail to leverage the advantages of GET.</li></ul></ul><br /><ul style="text-align: left;"><li>Assuming making HTTP call via GET\POST makes a service RESTful. This is a very common misconception and I too am culprit of thinking the same. But as I read more about REST and looked at examples I realize how far was I from a real RESTful implementation. I highly recommend <a href="http://amzn.to/A7ujeE" target="_blank">REST In Practice</a> book which is a great resource if one is serious about understanding REST.</li></ul><br /><ul style="text-align: left;"><li>Thinking the performance gains comes due to absence of SOAP envelop. The real performance gains come when data gets cached.&nbsp; This caching can occur at different locations starting from the servers network (reverse proxies), intermediaries, client network&nbsp; (proxies) and client browser. </li></ul><br /><ul style="text-align: left;"><li>Creating RESTful service and marking most of GET's as non cacheable. The common cause of this is not understanding the cache expiration in HTTP and therefore not taking advantage of it.&nbsp; Moreover during debugging cycles cached data is a pain to work with when one wants to test his\her fix.</li></ul><br />These are some of the patterns that are at top of my head. What else can be added?<br /><div><br /></div></div>

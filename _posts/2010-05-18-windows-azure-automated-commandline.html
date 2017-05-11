@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Windows Azure: Automated Commandline Deployment woes'
+date: '2010-05-18T15:24:00.007+05:30'
+author: Chandermani Arora
+tags:
+- Azure Automated Deployment Errors
+modified_time: '2010-05-18T15:46:42.622+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-1813203184811337936
+blogger_orig_url: http://chandermani.blogspot.com/2010/05/windows-azure-automated-commandline.html
+---
+
+I was trying to automate the process of Azure deployment through command line. The <a href="http://code.msdn.microsoft.com/azurecmdlets">Azure Powershell cmdlets</a> make this job very easy.<br /><br />I was facing some issues when deploying the Application on Azure using commandline( using CSPack + Azure cmdlets). Some of the features on the site were functioning, specifically those that depended upon Azure configuration files. The same worked with VS 2010 package and deployment.<br /><br />I realized that the package I was creating with CSPack was different from what VS 2010 was creating.<br /><br />The first step i took was to reproduce the issue on Dev Fabric.<br />I was luck enough to reproduce the same issue in Dev Fabric if i deployed the package file created using CSPack.<br />What i realized was that the WebRole class which should be called by framework whenever the Azure Framework initializes was not being called for some strange reason. I had called some initialization code such as SetConfigurationSettingPublisher in WebRole.cs.<br />This was causing call made later to fail.<br />I did some debugging for sometime before it just struck me that the CSPack has an argument that takes the Entry-Point Dll.<br />Once i provided the entry point dll argument to CSPack and deployed again things worked like a charm.<br /><br />The take away from this exercise was<br /><span style="font-weight: bold;">Azure requires us to provide Entry-Point DLL for a Worker Role but not for Web. But in case you create your own Entry Point class (deriving from RoleEntryPoint) do remember to register the assembly for the entry point class else the framework would take a default implementation.</span><br /><br />Happy Coding

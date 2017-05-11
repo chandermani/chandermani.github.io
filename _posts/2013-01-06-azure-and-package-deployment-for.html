@@ -1,0 +1,15 @@
+---
+layout: post
+title: Azure and Package Deployment for Specific Roles
+date: '2013-01-06T16:10:00.000+05:30'
+author: Chandermani Arora
+tags:
+- Azure
+- deployment
+modified_time: '2013-01-06T16:10:19.569+05:30'
+thumbnail: https://lh3.ggpht.com/-QRvEAqbuh6c/UOlSzZ0T-JI/AAAAAAAAAi0/9fGta5ztXmE/s72-c/SelectiveRoleUpdate.png
+blogger_id: tag:blogger.com,1999:blog-20117988.post-7478086522377973201
+blogger_orig_url: http://chandermani.blogspot.com/2013/01/azure-and-package-deployment-for.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><br /><br /><br /><br /><div style="text-align: justify;">When a single Azure Subscription Service has multiple roles (Web and Worker) in it, updates to the role cannot be selective. Time and again I have had scenarios where I wanted to update the one role but did not want to touch the other. But as Azure deployment works, there is a single package and it updates all roles in the subscription.&nbsp;</div><div style="text-align: justify;"></div><div style="text-align: justify;">While doing an update today I was pleasantly surprise that now while updating the site I do have an option to select which specific role to update. Here is what the dialog looks like now</div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-QRvEAqbuh6c/UOlSzZ0T-JI/AAAAAAAAAi0/9fGta5ztXmE/s1600/SelectiveRoleUpdate.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="514" src="https://lh3.ggpht.com/-QRvEAqbuh6c/UOlSzZ0T-JI/AAAAAAAAAi0/9fGta5ztXmE/s1600/SelectiveRoleUpdate.png" width="640" /></a></div><br /><div style="text-align: justify;">So now we can update specific roles without touching other ones. Great!!!</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">Things to keep in mind here would be, once deployment is complete you cannot tell which role was updated and which is still running on a older version. But the deployment name does change. So i think this is a good feature for some quick fixes, else we should stick to simultaneous updates only.</div></div>

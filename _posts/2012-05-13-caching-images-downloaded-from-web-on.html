@@ -1,0 +1,19 @@
+---
+layout: post
+title: Caching Images downloaded from web on Windows Phone Isolated storage
+date: '2012-05-13T18:55:00.000+05:30'
+author: Chandermani Arora
+tags:
+- Image
+- Isolated Storage
+- Windows Phone
+- internet
+- Converter
+- Cache
+modified_time: '2012-05-13T19:05:25.844+05:30'
+thumbnail: http://1.bp.blogspot.com/-SdkU2BWawQg/T6-3iUiIGBI/AAAAAAAAAfk/LymCtmoL2Fo/s72-c/Converter.png
+blogger_id: tag:blogger.com,1999:blog-20117988.post-164934034164983085
+blogger_orig_url: http://chandermani.blogspot.com/2012/05/caching-images-downloaded-from-web-on.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: center;"><a href="http://www.blogger.com/blogger.g?blogID=20117988" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><br /></a></div><a href="http://www.blogger.com/blogger.g?blogID=20117988" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><br /></a>I was helping on a Windows Phone application where the requirement was to cache the images the phone downloads on the isolated storage for offline viewing.<br />I wanted a solution which was simple and as transparent as possible. While researching I found&nbsp; someone wrote a Silverlight converter for loading images from isolated storage. Taking that as a base I created a converted which can<br /><ol style="text-align: left;"><li>Load image from web (http + https), and persist it to isolated storage.</li><li>In case of network connectivity issues can load the same image from isolated storage. It does that by mapping the http url to a isolated storage location.</li><li>In case the network is down and the image is neither there in cache, loads a default image, passed as parameter to converter.</li></ol><a href="https://gist.github.com/2688372" target="_blank">Here</a> is the gist for the implementation.<br /><script src="https://gist.github.com/2688372.js?file=CacheImageFileConverter.cs"></script> <br /><br />To use the converter<br /><ol style="text-align: left;"><li>Import the name space.</li><li>Declare the converter as resource.</li><li>Set the Image Source Property to use this converter like this&nbsp;</li></ol><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-SdkU2BWawQg/T6-3iUiIGBI/AAAAAAAAAfk/LymCtmoL2Fo/s1600/Converter.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="27" src="http://1.bp.blogspot.com/-SdkU2BWawQg/T6-3iUiIGBI/AAAAAAAAAfk/LymCtmoL2Fo/s400/Converter.png" width="400" /></a></div><br /><ol style="text-align: left;"></ol><ol style="text-align: left;"></ol></div>

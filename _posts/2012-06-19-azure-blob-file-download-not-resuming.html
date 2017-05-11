@@ -1,0 +1,19 @@
+---
+layout: post
+title: Azure Blob file download not resuming !
+date: '2012-06-19T18:30:00.000+05:30'
+author: Chandermani Arora
+tags:
+- DefaultServiceVersion
+- Azure
+- REST
+- HTTP
+- Blob
+- API
+- HTTP Range
+modified_time: '2012-06-19T18:31:30.720+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-1291413436424339141
+blogger_orig_url: http://chandermani.blogspot.com/2012/06/azure-blob-file-download-not-resuming.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: justify;"><a href="https://www.windowsazure.com/en-us/home/features/data-management/" target="_blank">Azure Blobs</a> are a scalable infrastructure to host\store files. I was working on understanding the behavior of large file uploads and downloads and create a reasonable strategy to support both scenarios in our application.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">Azure blob file can be downloaded using any browser or internet download manager. For a public blob the url of file would suffice, but for downloading a private blob one needs to create a url containing the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee395415.aspx" target="_blank">Secured Access Signature</a>.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">While testing downloads I realized that in case I pause and resume the download in Firefox or Chrome or any download manager the download restarts !!! I was expecting that the download should start from the place it paused. Imagine the scenario where we have uploaded half of a 2GB file and resuming the download would start over again !!! Clearly the Azure Blob storage was not supporting <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35" target="_blank">HTTP Range header</a>.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">As it turns out the Azure blob service is not a trivial file server. It is more of a Storage Application Server. It exposes an <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dd135733.aspx" target="_blank">REST API</a> to interact with it. The ability to support Range header(hence resume) was added in a later version of&nbsp; Blob API.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">The default API version that we interact with is <b>2009-09-19</b>. This is the version used in case we do not specify any (version can be added in HTTP header <i>x-ms-version</i>). Since the browser does not send any custom version header while making the GET request we do not get the resume support.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">The fix here was to update the blob service properties for our account using the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh452235.aspx" target="_blank">Set Blob Service Properties</a> API method. This method takes a parameter <i><b>DefaultServiceVersion</b></i>. This parameter defines the default version of blob API to use in case API version is not specified in the HTTP header. Setting this value to <b>2011-08-18</b> fixed the resume problem.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">Now the browser was able resume broken downloads and download managers could even download in multiple chunks to improve download speed.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">I did not find any option in the Azure Management portal that allows us to set the the above property so I had to do it using the REST API. I am sharing the code that I used to update the API version below</div><br /><script src="https://gist.github.com/2953898.js?file=DefaultServiceVersion.cs"></script></div>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Assigning Icon to a file type by tweaking registry
+date: '2011-03-10T12:01:00.003+05:30'
+author: Chandermani Arora
+tags:
+- File Type
+- Icon
+- Registry
+modified_time: '2011-03-10T12:20:00.422+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-6144689341046477015
+blogger_orig_url: http://chandermani.blogspot.com/2011/03/assigning-icon-to-file-type-by-tweaking.html
+---
+
+On our recent project we had an requirement for assigning a icon to a file type which is not associated with any executable. Visual Studio installer project does a great job of creating such association if there is a executable involved. Else we need to manually add some registry edit steps in the installer process. The changes required were<br /><ol><li>Under HKEY_CLASSES_ROOT add you extension key such as <i>.myx</i></li><li>Set the (default) string value to a friendly name for your application.</li><li>Create another key in HKEY_CLASSES_ROOT with the friendly name as specified in step 2.</li><li>Create a sub key for key created in step 3 with name DefaultIcon. Its (default) string should point to the folder location where the icon is.</li><li>In case of Visual Studio Setup project the macro [TARGETDIR] comes in handy. This macro can help identify the location of the icon file if stored in the installation folder iteself. For example [TARGETDIR]Process.ico</li></ol><div>Happy Coding,</div>Chandermani

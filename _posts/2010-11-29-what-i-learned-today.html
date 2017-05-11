@@ -1,0 +1,17 @@
+---
+layout: post
+title: What i learned today.
+date: '2010-11-29T17:48:00.004+05:30'
+author: Chandermani Arora
+tags:
+- MVC
+- Exception
+- REST
+- ASP.Net
+- Silverlight
+modified_time: '2010-11-29T17:57:37.940+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-6032925015767243342
+blogger_orig_url: http://chandermani.blogspot.com/2010/11/what-i-learned-today.html
+---
+
+Working with ASP.Net and SilverLight in my current project i learned two important things today<br /><ol><li>SL will always show generic NotFound exception for a remote call failures irrespective of what was returned from server.  This limitation roots in the browser which does not pass the exception details to the SL plugin. The only way around is to always send a responses which have Fault property for the SL client to work with. </li><li>ASP.Net forms authentication mechanism always redirects on 404 error and behaviour is hard to change. This becomes a problem working with SL or ASP.Net MVC clients which expect Http error code (REST clients). The workaround that i found on <a href="http://stackoverflow.com/questions/2931791/how-to-intercept-401-from-forms-authentication-in-asp-net-mvc">Stackoverflow </a>was to thrown 403 Error Code instead of 401.  This way service calls made from SL or ASP.Net MVC can return http status codes (REST endpoints) and will  not cause server redirects.<br /></li></ol>

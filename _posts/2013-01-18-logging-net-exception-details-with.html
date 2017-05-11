@@ -1,0 +1,14 @@
+---
+layout: post
+title: Logging .Net Exception Details with Complete Stack
+date: '2013-01-18T17:34:00.001+05:30'
+author: Chandermani Arora
+tags:
+- ".Net"
+- Exception
+modified_time: '2013-01-18T17:34:32.323+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-2618978077228049940
+blogger_orig_url: http://chandermani.blogspot.com/2013/01/logging-net-exception-details-with.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">I learned today that in .Net doing a ex.ToString() would log the complete exception details including any inner exception details. The important thing here is that it would do this recursively so if there is an InnerException it would call ToString() on it, which in turn can call ToString() on the next level hence forming a recursive chain.<br /><br />So we can do away with such format string<br /><br /><blockquote class="tr_bq">System.Diagnostics.Trace.TraceError("The error was {0}. Stack Trace {1}. InnerException Details {2}",ex.Message, ex.StackTrace,ex.InnerException.Message);</blockquote>&nbsp;</div>

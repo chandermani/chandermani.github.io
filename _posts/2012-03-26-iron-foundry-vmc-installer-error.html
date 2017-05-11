@@ -1,0 +1,17 @@
+---
+layout: post
+title: Case of missing Iron Foundry VMC client
+date: '2012-03-26T12:17:00.000+05:30'
+author: Chandermani Arora
+tags:
+- IronFoundry
+- Error
+- Iron Foundry
+- VMC
+- Installer
+modified_time: '2012-03-26T12:46:46.722+05:30'
+blogger_id: tag:blogger.com,1999:blog-20117988.post-6197013745410138511
+blogger_orig_url: http://chandermani.blogspot.com/2012/03/iron-foundry-vmc-installer-error.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">While installing the latest <a href="http://ironfoundry.org/" target="_blank">Iron Foundry</a> VMC client and Cloud Foundry Explorer there is an installation issue. Due to this VMC client install gets lost if both the VMC Client and CF Explorer are installed irrespective of the location of the install. <br /><br />As it turns out, if you install VMC client first and CF Explorer next, installer would delete the VMC install directory.<br /><br />If you install CF Explorer first and try to install VMC client later you get this error <br /><br /><blockquote class="tr_bq">"This version or newer version of VMC Command Line Tool is already installed."&nbsp;</blockquote><br />Current workaround would be copy the installed folder for VMC before starting CF Explorer install.<br /><br />Hope it helps.<br /><br /></div>
