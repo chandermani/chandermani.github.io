@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TypeScript anti-pattern the 'any' type
+title: TypeScript anti-pattern, the 'any' type
 author: Chandermani
 tags:
 - typescript
@@ -21,15 +21,13 @@ Let's understand what does typescript documentation say about `any`.
 
 > The `any` type is a powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type-checking during compilation.
 
-The except seems to be validating the fact that `any` enables us to use javascript code in typescript, albeit without the type safety net in place.
-
-**Then why is it an anti-pattern?**
+The except seems to be validating the fact that `any` enables us to use javascript code in typescript, albeit without the type safety net in place. **Then why is it an anti-pattern?**
 
 The reason is quite simple!
 
 **With `any` we lose the type safety and hence the benefits that are integral to any type safe language.** 
 
-I even argue that if you are using too much of `any`, you are writing javascript in typescript. Instead, with a little bit of effort we can reduce `any` usage to the bare minimum.
+I'll even argue that if you are using too much of `any`, you are writing javascript in typescript. Instead, with a little bit of effort we can reduce `any` usage to the bare minimum.
 
 How do we avoid `any`?
 
@@ -38,9 +36,9 @@ How do we avoid `any`?
 
 # Defining type definitions
 
-We are all familiar with the approach of including *type definitions* (or *typings*) for third party javascript libraries that we use with typescript. Anytime we use popular libraries such as *jquery*, *angular*, *react* in typescript we include the type definitions for these libraries as well.
+We all are familiar with the approach of including *type definitions* (or *typings*) for third party javascript libraries that we use with typescript. Anytime we use popular libraries such as *jquery*, *angular*, *react* in typescript we include the type definitions for these libraries as well.
 
-We need to do something similar for our own javascript code that we reference in typescript. We need to create typings. Let's take a quick example. Assuming you have a javascript `UserService` class defined with few function and attributes.
+We need to do something similar with our own javascript code that we reference in typescript. We need to create typings. Let's take a quick example. Assuming you have a javascript `UserService` class defined with few function and attributes.
 
 ```javascript
 function UserService() {
@@ -68,6 +66,6 @@ export interface User {
 ```
 Now instead of passing `UserService` as `userservice: any` in typescript we can use `userservice: UserService` and get all the intellisense and type safety!
 
-While defining type/interface for every javascript piece that we reference may seem an overkill, in long run it leads to a more maintainable code. Also remember, we do not have to create the complete type definition for the javascript class we are using, and can limit ourselves to properties and function that are used with out typescript code. Type definition generation can be a gradual process!
+While defining type/interface for every javascript piece that we reference may seem an overkill, in long run it leads to a more maintainable code. Also remember, we do not have to create the complete type definition for the javascript class we are using, and can limit ourselves to defining types for properties/functions that we plan to use in typescript code. Type definition generation can be a gradual process!
 
 Let's make best use of this awesome language!
