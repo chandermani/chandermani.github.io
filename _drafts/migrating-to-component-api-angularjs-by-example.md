@@ -130,7 +130,7 @@ We use the static $inject property here to define injection.
 Since the $scope injection is gone, the controller needs to be fixed.
 
 ### Getting rid of scope
-In the component world the controller defines the state that the component view binds to. The controller itself is the viewmodel. Therefore we are going to get rid of scope and replace it with reference to the controller.
+In the component world the controller defines the state that the component view binds to. The controller itself is the viewmodel. Therefore we need to get rid of the scope by attaching the properties + functions that were previously defined on scope to the controller instance.
 
 Inside the construction function take hold of the controller instance (into `ctrl`):
 
@@ -138,7 +138,29 @@ Inside the construction function take hold of the controller instance (into `ctr
 function WorkoutRunnerController($interval, $location) {
     var ctrl = this;
 ```
-And do a find and replace for `$scope` -> `ctrl` and thats it!
+And do a find and replace for `$scope` -> `ctrl` and we have got rid of scope! We could have used `this` instead of `ctrl`, but everyone knows `this` reference changes based on context/invocation (such as `$interval.then` callback function where `this` points to the window).
+
+### Using component lifecycle hook $onInit for initialization
+Components have well defined lifecycle hooks, which are called at certain points in the life of the component. We can use the $onInit hook to replaces our custom initialization code. This means, removing this:
+
+```javascript
+var init = function () {
+          startWorkout();
+      };
+```
+And moving the initialization code to $onInit
+
+```javascript
+ctrl.$onInit = function () {
+        startWorkout();
+    };
+```
+
+The component backend is complete, but the view bindings need to change as properties are now defined on the controller, not scope.
+
+## Fixing view bindings.
+
+
 
 
 
