@@ -158,8 +158,8 @@ ctrl.$onInit = function () {
 
 The component backend is complete, but the view bindings need to change as properties are now defined on the controller, not scope.
 
-## Fixing view bindings.
-
+## Fixing view bindings
+There is one think that I m Angular UI bindings depend upon the scope. Angular exposes the component controller on the view through the convinient property `$ctrl`. Internal what Angular is do
 
 
 
