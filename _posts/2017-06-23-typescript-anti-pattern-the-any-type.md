@@ -2,6 +2,7 @@
 layout: post
 title: TypeScript anti-pattern, the 'any' type
 author: Chandermani
+cover: assets/typescript.png
 tags:
 - typescript
 - javascript
