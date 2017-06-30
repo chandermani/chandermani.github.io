@@ -66,6 +66,6 @@ export interface User {
 ```
 Now instead of passing `UserService` as `userservice: any` in typescript we can use `userservice: UserService` and get all the intellisense and type safety!
 
-While defining type/interface for every javascript piece that we reference may seem an overkill, in long run it leads to a more maintainable code. Also remember, we do not have to create the complete type definition for the javascript class we are using, and can limit ourselves to defining types for properties/functions that we plan to use in typescript code. Type definition generation can be a gradual process!
+While defining type/interface for every javascript piece that we reference may seem be a daunting task, in the long run it leads to a more maintainable code. Also remember, we do not have to create the complete type definition for the javascript class we are using, and can limit ourselves to defining types for properties/functions that we plan to use in typescript code. Type definition generation can be a gradual process!
 
 Let's make best use of this awesome language!
