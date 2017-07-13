@@ -1,3 +1,15 @@
+---
+layout: post
+title: Effective code review
+author: Chandermani
+comments: false
+tags:
+- code
+- review
+- patterns
+- tips
+---
+
 There is no denying the fact how invaluable code reviews are. To list a few, code reviews helps in:
 - Improving the quality of the code
 - Identify exiting bugs and reduce potential bugs
@@ -34,4 +46,4 @@ Bottom line, add code analysis step to your code check-in and CI process.
 ## Best way to review, fix bug related to the functionality you want to review
 While this does not qualify as a prerequisite, in my opinion there is no better way to review a piece of code than to fix a bug or extend it yourself.
 
-When we either fix a bug or try to extend a piece of code, we gain a better understanding of how the piece of code works and how (well) it connects to the other parts of the system. The better the code the easier it is to fix/extend. And if the code is tough to work with we know we have a problem at hand, **technical debt**. We do not want too much of it!
+When we either fix a bug or try to extend a piece of code, we gain a better understanding of how the piece of code works and how (well) it connects to the other parts of the system. The better the code the easier it is to fix/extend. And if the code is tough to work with we know we have a problem at hand, **technical debt**. We don't want too much of it!
