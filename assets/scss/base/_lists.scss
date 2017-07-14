@@ -16,6 +16,13 @@ ol {
     padding-left: $base-spacing;
   }
 }
+ul {
+  @extend %default-ul;
+}
+
+ol {
+  @extend %default-ol;
+}
 
 dl {
   margin-bottom: $small-spacing;
