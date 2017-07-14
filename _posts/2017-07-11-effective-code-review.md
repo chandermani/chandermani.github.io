@@ -16,7 +16,6 @@ There is no denying the fact how invaluable code reviews are. To list a few, cod
 - Identify gaps in requirements
 - Identify gaps in design
 - Help junior team members learn from seasoned peers
-- Evaluate dev skills
 - Learn from others
 - Teach others
 
