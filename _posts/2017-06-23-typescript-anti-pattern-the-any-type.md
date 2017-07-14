@@ -3,6 +3,7 @@ layout: post
 title: TypeScript anti-pattern, the 'any' type
 author: Chandermani
 cover: /assets/images/typescript.png
+comments: true
 tags:
 - typescript
 - javascript

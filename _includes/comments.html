@@ -1,28 +1,18 @@
 {% if page.comments %}
-  <aside id="comments" class="disqus">
+<aside id="comments" class="disqus">
 
-    <div class="container">
-      <h3><i class="icon icon-comments-o"></i> Comments</h3>
-      <div id="disqus_thread"></div>
+  <div class="container">
+    <h3><i class="icon icon-comments-o"></i> Comments</h3>
+    <form method="POST" action="https://api.staticman.net/v2/entry/chandermani/chandermani.github.io/master">
+      <input name="options[redirect]" type="hidden" value="https://my-site.com">
+      <!-- e.g. "2016-01-02-this-is-a-post" -->
+      <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+      <label><input name="fields[name]" type="text">Name</label>
+      <label><input name="fields[email]" type="email">E-mail</label>
+      <label><textarea name="fields[message]"></textarea>Message</label>
+      <button type="submit">Go!</button>
+    </form>
+  </div>
 
-      <script type="text/javascript">
-        var disqus_shortname = '{{ site.disqus_shortname }}';
-        var disqus_identifier = '{{ page.id }}';
-        var disqus_title = '{{ page.title }}';
-        var disqus_url = '{{ site.url }}{{ post.url }}';
-        /*var disqus_developer = 1;*/
-
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-
-      <noscript>
-        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-      </noscript>
-    </div>
-
-  </aside>
+</aside>
 {% endif %}
