@@ -2,7 +2,7 @@
 layout: post
 title: Effective code review
 author: Chandermani
-comments: false
+comments: true
 cover: /assets/images/2017-07-11-effective-code-review.jpg
 tags:
 - code
