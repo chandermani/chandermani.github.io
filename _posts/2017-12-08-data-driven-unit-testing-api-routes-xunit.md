@@ -180,7 +180,7 @@ At a high level this is what happens:
 This test is an excellent exercise in understanding how WebApi route resolution works.
 
 Coming back to the pertinent question. How can we do better? 
-For starter look at this library https://mytestedasp.net/ that does support route testing and much more. 
+For starter look at this library [https://mytestedasp.net/](https://mytestedasp.net/) that does support route testing and much more. 
 
 An alternate approach that I highlight in this post is using **data driven tests** feature of xUnit. You can even marry the capabilities of the above library and approach that I outline below.
 
