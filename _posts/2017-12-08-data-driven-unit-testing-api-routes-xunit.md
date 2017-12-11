@@ -19,10 +19,11 @@ If you are building your API using [ASP.Net Web API 2](https://www.asp.net/web-a
 Route resolution on Web API (as well ASP.Net MVC) is about matching the incoming request route(url) with the routes defined in the *routing table* in a top down fashion and returning the first match. There is always a probability that addition of a new route in the routing table hides/overrides one or more existing routes. This can easily happen for route templates that have placeholders (such as this - `api/{controller}/{action}/{id}`).
 
 Also if you are building an API for your service/product and your API supports versioning (which it should), unit testing routes can come in handy. Imagine your evolving API endpoint such as:
-
+```
 http://awesome.api/v1.0/users  
 http://awesome.api/v1.1/users  
 http://awesome.api/v2.0/users
+```
 
 It will be nightmare for the consumers of your API if incorrect controllers/actions get invoked when you release a new API version. All because of incorrect route resolution. Integration test can catch such issues, but a early feedback during unit testing is very valuable. 
 
