@@ -32,7 +32,7 @@ This post is about how to implement route tests to making sure correct API endpo
 I have also created a sample project to support this post. Download it from my [GitHub repo](https://github.com/chandermani/UnitTestingAPIRoutes).
 
 ## Setup
-Assuming we already have a API to test, create a new class library project and install **NuGet** packages for **xUnit**, **Moq** and **WebAPI**.
+Assuming we already have a API to test, create a new class library project and install **NuGet** packages for **xUnit**, **Moq** and **WebApi**.
 
 *Follow [this post](https://xunit.github.io/docs/getting-started-desktop.html) to setup xUnit as your unit testing framework in Visual Studio if case you are using xUnit for the fist time.*
 
@@ -326,7 +326,7 @@ Add a new fixture to initialize the `HttpConfiguration`
         }
     }
 ```
-The fixture implementation above does the necessary webapi initialization.
+The fixture implementation above does the necessary WebApi initialization.
 
 To use the class fixture in the test class change the class definition to:
 ```cs
