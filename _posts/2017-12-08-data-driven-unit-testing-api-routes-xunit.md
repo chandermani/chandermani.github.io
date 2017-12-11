@@ -89,7 +89,7 @@ public class UsersController : ApiController
 ```
 With *attribute based routing* some of the standard routes for above controller look like:
 
-```http
+```
 // V1 Routes
 http://localhost/api/v1/users
 http://localhost/api/v1/users/1
