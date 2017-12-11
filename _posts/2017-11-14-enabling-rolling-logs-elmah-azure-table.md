@@ -8,6 +8,7 @@ tags:
 - ELMAH
 - azure
 - logs
+- rolling logs
 - library
 - table storage
 ---

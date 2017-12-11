@@ -5,11 +5,12 @@ author: Chandermani
 comments: true
 cover: /assets/images/2017-12-08-data-driven-unit-testing-api-routes-xunit.png
 tags:
-- xUnit
+- xunit
 - testing
 - unit testing
-- WebAPI
+- webapi
 - routing
+-api
 ---
 If you are building your API using [ASP.Net Web API 2](https://www.asp.net/web-api) framework, this post will demonstrate you how easy it is to test you API routes. 
 
