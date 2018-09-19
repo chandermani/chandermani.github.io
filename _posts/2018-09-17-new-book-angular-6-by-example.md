@@ -3,7 +3,7 @@ layout: post
 title: Angular 6 By Example
 author: Chandermani
 comments: true
-cover: /assets/images/2018-09-17-new-book-angular-6-by-example.png
+cover: /assets/images/2018-09-17-new-book-angular-6-by-example-share.png
 tags:
 - Book
 - Angular
