@@ -103,6 +103,7 @@ While this is the best form of learning it is not always possible to pair with s
 
 To conclude, I will paraphrase the opening statement:
 > A good engineer is one who learns and improves over time.
-And I am sure there are more ways out there that can benefit us in our pursuit for excellence.
+
+I hope you find these tips helpful and please do share your mantra of learning and self-improvement.
 
 Happy Learning!
