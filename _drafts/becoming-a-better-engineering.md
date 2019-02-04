@@ -83,11 +83,11 @@ If you have not adopted devops, then I highly encourage you to learn about the d
 
 ### Learn from mistakes
 
-Experience is the name everyone gives to their mistakes. - Oscar Wilde
+> Experience is the name everyone gives to their mistakes. - Oscar Wilde
 
 You will make mistakes! Learn from your mistake and from the mistake that you observe others making. Mistakes are part of our learning process, and as long as we learn from them and take corrective measures these mistakes give us great insights into what works, what doesn't, and why it doesn't. It is difficult to appreciate the right way of doing things unless you have made a few mistakes and suffered. But remember:
 
-Learn from the mistakes of others. You can't live long enough to make them all yourself - Eleanor Roosevelt
+> Learn from the mistakes of others. You can't live long enough to make them all yourself - Eleanor Roosevelt
 
 A great engineer makes fewer mistakes, learns from others, and makes sure he does not repeat them again.
 
